@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { BiSearchAlt, BiUser } from "react-icons/bi";
 import { BsChevronCompactDown } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -19,23 +20,23 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">
+              <Nav.Link as={Link} to="/home">
                 Home
                 <BsChevronCompactDown />
               </Nav.Link>
-              <Nav.Link href="#action2">
-                Destination
+              <Nav.Link as={Link} to="/order">
+                My Order
                 <BsChevronCompactDown />
               </Nav.Link>
-              <Nav.Link href="#action3">
-                Gallary
+              <Nav.Link as={Link} to="/createNewEvent">
+                Create New Event
                 <BsChevronCompactDown />
               </Nav.Link>
-              <Nav.Link href="#action4">
-                About Us
+              <Nav.Link as={Link} to="/management">
+                Managment
                 <BsChevronCompactDown />
               </Nav.Link>
-              <Nav.Link href="#action5">
+              <Nav.Link as={Link} to="/contact">
                 Contact US
                 <BsChevronCompactDown />
               </Nav.Link>
@@ -44,7 +45,9 @@ const Header = () => {
               <BiSearchAlt className="fs-4 me-4 default-color" />
               <BiUser className="fs-4 default-color" />
             </div>
-            <Button variant="outline-success ms-3">Search</Button>
+            <Link to="/login">
+              <button className="btn default-bg text-white ms-3">Login</button>
+            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
